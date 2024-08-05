@@ -27,25 +27,26 @@ export default function App() {
               Discover Endless Possibilities with{" "}
               <Text className="text-secondary-200">Aora</Text>
             </Text>
-            <Image 
+            <Image
               source={images.path}
-              className='w-[136px] h-[15px] absolute -bottom-2 -right-8'
+              className="w-[136px] h-[15px] absolute -bottom-2 -right-8"
               resizeMode="contain"
             />
           </View>
-          <Text className='text-sm font-pregular text-gray-100 mt-7 text-center'>
-          Where Creativity Meets Innovation: Embark on a Journey of Limitless Exploration with Aora
+          <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
+            Where Creativity Meets Innovation: Embark on a Journey of Limitless
+            Exploration with Aora
           </Text>
 
-          <CustomButton 
+          <CustomButton
             title="Continue with Email"
-            handlePress={() => router.push('/sign-in')}
-            containerStyles='w-full mt-7'
-            textStyles=''
+            handlePress={() => router.push("/sign-in")}
+            containerStyles="w-full mt-7"
+            textStyles=""
           />
         </View>
       </ScrollView>
-      <StatusBar backgroundColor="#161622" style="light"/>
+      <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
 }
