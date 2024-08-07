@@ -9,6 +9,7 @@ import { Link, router } from "expo-router";
 import { createUser } from "../../lib/appwrite";
 
 const SignUp = () => {
+  const [isSubmitting, setisSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
     email: "",
@@ -37,7 +38,7 @@ const SignUp = () => {
     createUser();
   };
 
-  const [isSubmitting, setisSubmitting] = useState(false);
+  
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -75,7 +76,7 @@ const SignUp = () => {
           />
 
           <CustomButton
-            title="Sign In"
+            title="Sign Up"
             containerStyles="mt-7"
             handlePress={submit}
             isLoading={isSubmitting}

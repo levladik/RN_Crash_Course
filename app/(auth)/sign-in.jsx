@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, View, Alert } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -9,6 +9,7 @@ import { Link, router } from "expo-router";
 import { signIn } from "../../lib/appwrite";
 
 const SignIn = () => {
+  const [isSubmitting, setisSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -36,7 +37,6 @@ const SignIn = () => {
     createUser();
   };
 
-  const [isSubmitting, setisSubmitting] = useState(false);
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -69,7 +69,7 @@ const SignIn = () => {
           <CustomButton
             title="Sign In"
             containerStyles="mt-7"
-            handlePress={() => router.replace("/home")}
+            handlePress={submit}
             isLoading={isSubmitting}
           />
 
